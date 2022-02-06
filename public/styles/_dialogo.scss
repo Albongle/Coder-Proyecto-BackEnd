@@ -1,6 +1,10 @@
 .dialogo{
+    @media (max-width:768px) {
+        width: 80vw;
+        left:10vw;
+         
+    }
     border-radius: 1rem;
-
     position: absolute; 
     width: 40rem; 
     top:50vh; 

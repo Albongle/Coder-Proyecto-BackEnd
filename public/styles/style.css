@@ -748,6 +748,13 @@ html {
   border: 0;
 }
 
+@media (max-width: 768px) {
+  .dialogo {
+    width: 80vw;
+    left: 10vw;
+  }
+}
+
 .dialogo .dialogo__btn-cierra {
   position: relative;
   top: 10%;
