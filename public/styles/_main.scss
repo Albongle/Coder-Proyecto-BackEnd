@@ -1,0 +1,28 @@
+.main{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+
+    @media (max-width:768px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .whatsapp {
+        bottom: 5rem;
+        right: 0rem;
+        position: fixed;
+        &:hover{
+            
+            cursor: pointer;
+        }
+        img:hover{
+            transform: scale(1.1,1.1);
+            transition-delay: .1s;
+            transition-duration: 1s;
+        }
+
+      }
+}
