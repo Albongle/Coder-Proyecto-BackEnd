@@ -3,7 +3,6 @@ import { addAnuncio,notAnuncio, createRangoDePrecios, createFiltroTipo, deleteCa
 import { leeDelStorage } from "./storage.js";
 import spinner from "./spinner.js";
 const socket = io();
-
 let imgPortada=1;
 
 socket.on("refresh-productos",(data)=>{

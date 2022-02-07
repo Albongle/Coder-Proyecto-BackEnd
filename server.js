@@ -34,7 +34,14 @@ const server  = app.listen(app.get("port"),()=>console.log(`App corriendo en ${a
 //socket
 const io = socketIO(server);
 io.on("connection",(socket)=>{
-    console.log("Usuario conectado con ID", socket.id);    
+    console.log("Usuario conectado con ID", socket.id);
+    
+    socket.on("chat:tiping",(data)=>{
+        socket.broadcast.emit("chat:tiping", data);
+    });
+    socket.on("new:message",(data)=>{
+        io.sockets.emit("new:message", data);
+    });
 });
 
 app.io = io;

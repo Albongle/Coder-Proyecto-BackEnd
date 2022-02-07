@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./assets/img/iconCel.ico" type="image/x-icon">
   <script src="socket.io/socket.io.js"></script>
+  <script src="./scripts/chat.js" type="module" defer></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script><!-- JQuery -->
   <script src="./scripts/main.js" defer type="module"></script><!-- logica propia -->
@@ -129,7 +130,8 @@
               <option value="/assets/img/equipos/K51s.png">LG-K51</option>
               <option value="/assets/img/equipos/E7.png">Motorola-E7</option>
             </select>
-            <textarea name="desc" id="desc" cols="30" rows="10" placeholder="Descripcion max 150 caracteres" maxlength="150"></textarea>
+            <textarea name="desc" id="desc" cols="30" rows="10" placeholder="Descripcion max 150 caracteres"
+              maxlength="150"></textarea>
           </div>
           <input id="btn-send-producto" type="submit" value="Enviar">
           <input type="hidden" id="gestor-accion" name="gestor-accion">
@@ -155,6 +157,30 @@
     <section class="whatsapp animate__animated animate__backInDown">
       <img id="btn-open-chat" src="./assets/img/chat.png" alt="chat">
     </section>
+
+    <dialog id="dialogo-chat" class="dialogo dialogo-chat">
+
+      <button class="dialogo__btn-cierra" id="btn-cierra-dialogo-chat">X</button>
+      <div class="container">
+        <div class="chat-websocket">
+          <h1>Bienvenido</h1>
+          <div class="websocket-actions" id="websocket-actions">
+
+          </div>
+          <div class="websocket-controls" id="websocket-controls">
+            <input id="user" type="text" placeholder="Usuario">
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Mensaje" disabled></textarea>
+            <input id="send" type="button" value="Enviar" disabled>
+
+
+          </div>
+          <div class="websocket-messages" id="websocket-messages">
+
+          </div>
+
+        </div>
+      </div>
+    </dialog>
 
   </main>
 
